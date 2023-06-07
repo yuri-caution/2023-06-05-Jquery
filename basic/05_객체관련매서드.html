@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-객제 관련 매서드</title>
+    <script src="./script/code.jquery.com_jquery-1.12.4.js"></script>
+</head>
+<body>
+    <section>
+        <h1>객체 관련 매서드</h1>
+        <div class="box1">
+            <h2>html</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, dolorum?</p>
+        </div>
+
+        <div id="box2"></div>
+
+        <div id="box3">
+            <h2></h2>
+            <p></p>
+        </div>
+
+        <div id="box4">
+            <img src="./images/card_01.jpg" alt="카드 1" border="2">
+        </div>
+
+        <form action="">
+            <label for="user_name">이름</label>
+            <input type="text" name="user_name" id="user_name" value="홍길동">
+            <label for="user_id">아이디</label>
+            <input type="text" name="user_id" id="user_id" value="Alice">
+        </form>
+
+        <form action="">
+            <p>
+                <input type="checkbox" name="chk_1" id="chk_1">
+                <label for="chk_1">수박</label> 
+                <input type="checkbox" name="chk_2" id="chk_2" checked>
+                <label for="chk_2">딸기</label> 
+                <input type="checkbox" name="chk_3" id="chk_3">
+                <label for="chk_3">복숭아</label> 
+                <!-- id와 label의 for가 연결 -->
+            </p>
+
+            <p>
+                <select name="books" id="books">
+                    <option value="html">html</option>
+                    <option value="css">css</option>
+                    <option value="javascript" selected>javascript</option>
+                </select>
+            </p>
+        </form>
+    </section>
+        
+    <script>
+        //html(), text()
+        var res = $('.box1').html() //하위요소를 문자열로 반환
+        console.log(res)
+        $('#box2').text(res) //()비워두면 가져오기, ()넣으면 추가하기
+
+        $('.box1 p').html('<a href="#">안녕하세요</a>') //문자열을 넣으면 기존 요소를 제거하고 새 문자열로 변경
+        $('#box3 h2').text($('.box1 h2').text()) // 요소의 텍스트를 가져오거나 생성
+        $('#box3 p').text($('.box1 p').text())
+
+        // attr() 속성추가, removeAtrr() 속성 삭세
+        var srcVal = $('#box4 img').attr('src')
+        console.log(srcVal)
+        var altVal = $('#box4 img').attr('alt')
+        console.log(altVal)
+        var borderVal = $('#box4 img').attr('border')
+        console.log(borderVal)
+
+        $('#box4 img').attr({
+            src : './images/card_02.jpg',
+            width: 150,
+            alt: '카드 2'
+        }).removeAttr('border')
+
+        // val() 
+        // value 값
+        //폼요소의 속성값을 가져오거나 깂을 적용함
+        console.log($('#user_name').val())
+        console.log($('#user_id').val())
+
+        $('#user_name').val('임꺽정')
+        $('#user_id').val('Tom')
+
+        //prop() 폼 요소의 상태 속성값을 가져오거나 새롭게 설정
+        //선택한 요소의 태그명, 노드타입, 인덱스 등을 알 수 있음
+
+        console.log($('#chk_1').prop('checked'))
+        console.log($('#chk_2').prop('checked'))
+        $('#chk_3').prop('checked', true)
+
+        console.log($('#books').prop('selectedIndex'))
+
+    </script>
+</body>
+</html>
