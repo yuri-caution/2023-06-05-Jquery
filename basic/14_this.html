@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-this</title>
+    <script src="./script/code.jquery.com_jquery-1.12.4.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <h1>this</h1>
+    <ul class="menu1">
+        <li><a href="#">메뉴 1</a></li>
+        <li><a href="#">메뉴 2</a></li>
+        <li><a href="#">메뉴 3</a></li>
+        <li><a href="#">메뉴 4</a></li>
+    </ul>
+    <h1>index()</h1>
+    <ul class="menu2">
+        <li><a href="#">메뉴 5</a></li>
+        <li><a href="#">메뉴 6</a></li>
+        <li><a href="#">메뉴 7</a></li>
+        <li><a href="#">메뉴 8</a></li>
+    </ul>
+
+    <h2 class="idx">index: <span></span></h2>
+
+
+    <script>
+        // 화살표 함수는 안 됨
+        $('.menu1 li').on('click', function(){
+            $('.menu1 li').css('background', '#fff')
+            $(this).css('background', 'red')
+            console.log($(this))
+        })
+
+        $('.menu2 li').on('click', function(){
+            var idx = $(this).index()
+
+            $('.menu2 li').css('background', '#fff')
+            $('.menu2 li').eq(idx).css('background', 'green')
+            $('.idx span').text(idx)
+        })
+    </script>
+</body>
+</html>
