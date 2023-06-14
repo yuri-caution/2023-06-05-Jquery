@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="../script/code.jquery.com_jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js" integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Animate</h1>
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+
+        <p class="text">hello jquery</p>
+        
+        <div class="btns">
+            <button class="btn1">button1</button>
+            <button class="btn2">button2</button>
+            <button class="btn3">button3</button>
+            <button class="btn4">button4</button>
+        </div>
+    </div>
+
+    <script>
+        $('.btn1').click(function(){
+            $('.box1').stop().animate({ width: 600 }, 1000)
+        })
+
+        $('.btn2').on('click', function(){
+            $('.box2').stop().animate({ width: 400 }, 3000, 'easeOutElastic', function(){
+                $('.box2').animate({ width: 100}, 1000)
+            })
+        })
+
+        $('.btn3').on('click', function(){
+            $('.box3').stop().animate({ width: 400, height: 400}, 'fast')
+        })
+
+        // 콜백 지옥 권장X
+        $('.btn4').on('click', function(){
+            $('.box4').animate({left: 500}, 1000, function(){
+                $(this).animate({width: 30, height: 30}, 1000, function(){
+                    $(this).animate({left: 0}, 1000, function(){
+                        $(this).animate({width: 100, height: 100})
+                    })
+                })
+            })
+        })
+
+        $('.text')
+            .on('mouseover', function(){
+                $(this).stop().animate({fontSize : 50},'fast')
+            })
+            .on('mouseleave', function(){
+                $(this).stop().animate({ fontSize : 14 }, 'fast')
+            })
+        </script>
+</body>
+</html>

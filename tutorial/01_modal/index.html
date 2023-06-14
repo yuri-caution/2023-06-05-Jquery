@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="../script/code.jquery.com_jquery-1.12.4.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>modal</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, mollitia optio repellat nostrum at iste illo accusantium ratione nulla voluptas blanditiis, quas sit cupiditate officiis, et voluptatum hic! Facilis, optio!</p>
+        <button class="open">read more...</button>
+    </div>
+
+    <div class="dimm"></div>
+    <div class="modal">
+        <h2>I am modal</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum possimus vitae officia alias iure veniam enim tempore veritatis! Harum ex animi dolorum molestias omnis iste saepe recusandae id sequi eveniet.</p>
+        <button class="close">close</button>
+    </div>
+
+    <script>
+        $('.open').on('click', function(){
+            $('.dimm').show()
+            $('.modal').show()
+        })
+        $('.close').on('click', function(){
+            $('.dimm').hide()
+            $('.modal').hide()
+        })
+    </script>
+</body>
+</html>

@@ -43,9 +43,13 @@
                     var title = $(item).find('title').text()
                     var link = $(item).find('link').text()
                     var pubDate = $(item).find('pubDate').text()
+                    var category = $(item).find("dc\\:category").text()
                     var description = $(item).find('description').text()
 
                     var row = $('<li />').append(
+                        $('<div />').addClass('category').text(category),
+                        $('<div />').addClass('title').text(title),
+                        $('<div />').addClass('date').text(moment(pubDate).format('YYYY-MM-DD hh:mm:ss')),
                         $('<div />').addClass('title').text(title),
                         $('<a />').text(description).attr({
                             href: link,

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="../script/code.jquery.com_jquery-1.12.4.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Find</h1>
+        <ul class="cards">
+            <li>
+                <img src="../images/img_01.jpg" alt="">
+                <p>This is title - 01</p>
+            </li>
+            <!-- p 안에 h1,2, 3... 태그 넣지 않기 -->
+            <!-- inline 안에 block 넣지 않기, a태그만 묶을 수 있음 -->
+            <li>
+                <img src="../images/img_02.jpg" alt="">
+                <p>This is title - 02</p>
+            </li>
+            <li>
+                <img src="../images/img_03.jpg" alt="">
+                <p>This is title - 03</p>
+            </li>
+        </ul>
+        
+    </div>
+
+    <script>
+        var item = $('.cards li')
+        var time = 300
+
+        item.eq(0).mouseenter(function(){
+            $(this).addClass('active').find('p').stop().animate({bottom: 0}, time)
+        }).mouseleave(function(){
+            $(this).removeClass('active').find('p').stop().animate({ bottom: -60}, time)
+        })
+
+        item.eq(1).mouseenter(function(){
+            $(this).addClass('active').find('p').stop().animate({ opacity: 1}, time)
+        }).mouseleave(function(){
+            $(this).removeClass('active').find('p').stop().animate({opacity: 0}, time)
+        })
+
+        item.eq(2).mouseenter(function(){
+            $(this).addClass('active').find('p').stop().animate({left: 0}, time)
+        }).mouseleave(function(){
+            $(this).removeClass('active').find('p').stop().animate({left: '-100%'}, time)
+        })
+    </script>
+</body>
+</html>
