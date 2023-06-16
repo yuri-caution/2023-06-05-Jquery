@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style2.css">
+    <script src="../script/code.jquery.com_jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>tab2</h1>
+
+        <div id="tab">
+            <ul class="tab">
+                <li><a href="#x">tab 1</a></li>
+                <li><a href="#x">tab 2</a></li>
+                <li><a href="#x">tab 3</a></li>
+            </ul>
+            <div class="tab_content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, modi error! Porro atque illum possimus, impedit dolore eius quibusdam magnam nesciunt velit voluptatem illo, ducimus modi suscipit fugiat quia, iure omnis eaque! Ipsam dolore minima praesentium distinctio itaque eaque molestiae, odit beatae consectetur quas voluptate delectus aliquid quisquam! Quo, culpa.
+            </div>
+            <div class="tab_content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, modi error! Porro atque illum possimus, impedit dolore eius quibusdam magnam nesciunt velit voluptatem illo, ducimus modi suscipit fugiat quia, iure omnis eaque! Ipsam dolore minima praesentium distinctio itaque eaque molestiae, odit beatae consectetur quas voluptate delectus aliquid quisquam! Quo, culpa.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, modi error! Porro atque illum possimus, impedit dolore eius quibusdam magnam nesciunt velit voluptatem illo, ducimus modi suscipit fugiat quia, iure omnis eaque! Ipsam dolore minima praesentium distinctio itaque eaque molestiae, odit beatae consectetur quas voluptate delectus aliquid quisquam! Quo, culpa.
+            </div>
+            <div class="tab_content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, modi error! Porro atque illum possimus, impedit dolore eius quibusdam magnam nesciunt velit voluptatem illo, ducimus modi suscipit fugiat quia, iure omnis eaque! Ipsam dolore minima praesentium distinctio itaque eaque molestiae, odit beatae consectetur quas voluptate delectus aliquid quisquam! Quo, culpa.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe corporis vel aliquam libero. Laudantium, aperiam corrupti. Libero?
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('.tab li').eq(0).addClass('active')
+        $('.tab_content').hide().eq(0).show()
+        $('.tab li').click(function(){
+            $('.tab li').removeClass('active')
+            $(this).addClass('active')
+            let idx = $(this).index()
+            $('.tab_content').hide().eq(idx).show()
+
+        })
+    </script>
+</body>
+</html>

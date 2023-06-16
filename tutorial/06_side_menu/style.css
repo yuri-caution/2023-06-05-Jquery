@@ -1,0 +1,49 @@
+h1 {
+    text-align: center;
+    margin: 50px 0;
+}
+
+body {
+    background-color: lightgrey;
+}
+
+.side {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: #fff;
+    padding: 32px;
+    transition: right 0.5s;
+}
+
+.active {
+    right: 0;
+}
+
+.btn {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -40px;
+    cursor: pointer;
+}
+
+.banner {
+    height: 100px;
+    background-color: #eee;
+    margin: 10px 0;
+}
+
+ul {
+    margin: 20px 0;
+}
+
+ul li {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    margin: 10px 0;
+}

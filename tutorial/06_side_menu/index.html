@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="../script/code.jquery.com_jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Drawer Menu</h1>
+        <div class="side">
+            <div class="banner"></div>
+            <ul>
+                <li>Html</li>
+                <li>Css</li>
+                <li>Javascript</li>
+                <li>Jquery</li>
+                <li>Git</li>
+            </ul>
+            <div class="banner"></div>
+            <div class="banner"></div>
+            <div class="banner"></div>
+
+            <div class="btn">
+                <i class="xi-angle-left"></i>
+                <!-- <img src="../images/open.png" alt=""> -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('.btn').click(function(){
+            $('.side').toggleClass('active')
+            
+            if($('.side').hasClass('active')){
+                // $(this).find('img').attr('src', '../images/close.png')
+                $(this).find('i').addClass('xi-angle-right')
+            } else {
+                // $(this).find('img').attr('src', '../images/open.png')
+                $(this).find('i').attr('class', 'xi-angle-left')
+            }
+        })
+    </script>
+</body>
+</html>

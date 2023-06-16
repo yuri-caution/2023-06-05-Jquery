@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="../script/code.jquery.com_jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Accordion</h1>
+
+        <div class="accordion">
+            <div class="text_box">
+                <h3 class="active">This is Title 1</h3>
+                <p class="text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error maxime ratione sint itaque, nobis asperiores, rem exercitationem veritatis, officia voluptate accusantium accusamus molestiae. Nulla nihil facilis eius veritatis praesentium voluptas quos, ea at magnam eum unde odit eaque dolorem, dicta iste! Veritatis, dicta possimus dolorem nesciunt officiis voluptate quis hic!
+                </p>
+            </div>
+            <div class="text_box">
+                <h3>This is Title 2</h3>
+                <p class="text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error maxime ratione sint itaque, nobis asperiores, rem exercitationem veritatis, officia voluptate accusantium accusamus molestiae. Nulla nihil facilis eius veritatis praesentium voluptas quos, ea at magnam eum unde odit eaque dolorem, dicta iste! Veritatis, dicta possimus dolorem nesciunt officiis voluptate quis hic!
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error maxime ratione sint itaque, nobis asperiores, rem exercitationem veritatis, officia voluptate accusantium accusamus molestiae. Nulla nihil facilis eius veritatis praesentium voluptas quos, ea at magnam eum unde odit eaque dolorem, dicta iste! Veritatis, dicta possimus dolorem nesciunt officiis voluptate quis hic!
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error maxime ratione sint itaque, nobis asperiores, rem exercitationem veritatis, officia voluptate accusantium accusamus molestiae. Nulla nihil facilis eius veritatis praesentium voluptas quos, ea at magnam eum unde odit eaque dolorem, dicta iste! Veritatis, dicta possimus dolorem nesciunt officiis voluptate quis hic!
+                </p>
+            </div>
+            <div class="text_box">
+                <h3>This is Title 3</h3>
+                <p class="text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error maxime ratione sint itaque, nobis asperiores, rem exercitationem veritatis, officia voluptate accusantium accusamus molestiae. Nulla nihil facilis eius veritatis praesentium voluptas quos, ea at magnam eum unde odit eaque dolorem, dicta iste! Veritatis, dicta possimus dolorem nesciunt officiis voluptate quis hic!
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error maxime ratione sint itaque, nobis asperiores, rem exercitationem veritatis, officia voluptate accusantium accusamus molestiae. Nulla nihil facilis eius veritatis praesentium voluptas quos, ea at magnam eum unde odit eaque dolorem, dicta iste! Veritatis, dicta possimus dolorem nesciunt officiis voluptate quis hic!
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        $('.text_box:first').find('h3').addClass('active')
+        $('.text_box:first').find('p').slideDown()
+
+        // $('.text_box h3').on('click', function() {
+        //     $(this).toggleClass('active').next().slideToggle()
+        // })
+
+        $('.text_box h3').on('click', function() {
+            
+                $('.text_box h3').removeClass('active')
+                $('.text_box').find('p').slideUp()
+                $(this).addClass('active').next().slideDown()
+            
+        })
+    </script>
+</body>
+</html>

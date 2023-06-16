@@ -16,10 +16,28 @@
             color: #333;
             list-style: none;
         }
-        .title {
-
+        .category {
+            display: block;
+            background-color: lightcoral;
+            width: 30px;
+            padding: 6px;
+            color: white;
+            margin-bottom: 10px;
         }
-        .date {}
+        .title {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .date {
+            margin-bottom: 10px;
+        }
+        
+        .desc {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -48,14 +66,12 @@
 
                     var row = $('<li />').append(
                         $('<div />').addClass('category').text(category),
-                        $('<div />').addClass('title').text(title),
-                        $('<div />').addClass('date').text(moment(pubDate).format('YYYY-MM-DD hh:mm:ss')),
-                        $('<div />').addClass('title').text(title),
-                        $('<a />').text(description).attr({
+                        $('<a />').addClass('title').text(title).attr({
                             href: link,
                             target: '_blank'
                         }),
                         $('<div />').addClass('date').text(moment(pubDate).format('YYYY-MM-DD hh:mm:ss')),
+                        $('<div />').addClass('desc').html(description)
                         
                     )
                     ul.append(row)
