@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="../script/code.jquery.com_jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Filter</h1>
+        <div class="main">
+            <div class="btns">
+                <button data-id="all" class="active">all</button>
+                <button data-id="web">web</button>
+                <button data-id="ui">ui</button>
+                <button data-id="js">js</button>
+            </div>
+
+            <ul class="list">
+                <li data-item="web">1 <span>web</span></li>
+                <li data-item="ui">2 <span>ui</span></li>
+                <li data-item="web">3 <span>web</span></li>
+                <li data-item="web">4 <span>web</span></li>
+                <li data-item="js">5 <span>js</span></li>
+                <li data-item="ui">6 <span>ui</span></li>
+                <li data-item="js">7 <span>js</span></li>
+                <li data-item="web">8 <span>web</span></li>
+                <li data-item="js">9 <span>js</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        $('.btns button').on('click', function(e){
+            $('.btns button').removeClass('active')
+            $(this).addClass('active')
+            // data-id = dataset.id
+            var category = e.currentTarget.dataset.id
+            if(category === 'all'){
+                $('.list li').show()
+            }else{
+                // [data-item=category]
+                // $('.list li').hide().filter('[data-item = ' + category + ']').show()
+                $('.list li').hide().filter(`[data-item = ${category}]`).show()
+            }
+        })
+    </script>
+</body>
+</html>

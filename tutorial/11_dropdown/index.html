@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="../script/code.jquery.com_jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo">가나다</div>
+                <ul class="gnb">
+                    <li>
+                        <a href="#x">소개</a>
+                        <ul>
+                            <li><a href="#x">인사말</a></li>
+                            <li><a href="#x">연혁</a></li>
+                            <li><a href="#x">수상내역</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#x">홍보광장</a>
+                        <ul>
+                            <li><a href="#x">보도자료</a></li>
+                            <li><a href="#x">TV광고</a></li>
+                            <li><a href="#x">미디어 행사</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="bars">
+                    <i class="xi-bars"></i>
+                </div>
+            </nav>
+        </header>
+
+        <div class="main">
+            <div class="slide"></div>
+            <section>
+                <h2>Lorem ipsum dolor sit amet.</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus voluptatibus quibusdam error nesciunt, cumque molestias modi aut tempora. Perspiciatis, atque dolore. Ut deleniti reiciendis ab! Optio nostrum nemo eius quia a at cumque. Vero ab ratione architecto et autem inventore quia. Debitis veniam neque nam soluta provident delectus quae perspiciatis quisquam, eveniet animi dolorem placeat officia ipsum aut eius ullam pariatur. Accusamus praesentium quod tempora libero ut soluta natus possimus repellendus, optio consectetur incidunt dicta nisi mollitia temporibus officiis quia exercitationem sapiente repudiandae itaque qui vitae et delectus! Corrupti, perferendis voluptatibus beatae perspiciatis soluta id dignissimos deleniti et illo doloremque.</p>
+            </section>
+
+        </div>
+    </div>
+
+    <script>
+        $('.gnb > li').hover(function(){
+            $(this).find('ul').stop().slideDown('fast')
+        }, function(){
+            $(this).find('ul').stop().slideUp('fast')
+        })
+    </script>
+</body>
+</html>
